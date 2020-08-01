@@ -9,5 +9,10 @@ namespace College.Models
     {
         public int NotesId { get; set; }
 
+        public int StudentId { get; set; }
+        public int ClassId { get; set; }
+
+        public bool IsAproved { get; set; }
+
     }
 }
