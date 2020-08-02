@@ -3,14 +3,16 @@ using College.Models;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace College.Migrations
 {
     [DbContext(typeof(CollegeContext))]
-    partial class CollegeContextModelSnapshot : ModelSnapshot
+    [Migration("20200802223156_Test3")]
+    partial class Test3
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -31,23 +33,6 @@ namespace College.Migrations
                     b.ToTable("Classes");
                 });
 
-            modelBuilder.Entity("College.Models.Notes", b =>
-                {
-                    b.Property<int>("NotesId")
-                        .ValueGeneratedOnAdd()
-                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
-
-                    b.Property<int>("ClassId");
-
-                    b.Property<bool>("IsAproved");
-
-                    b.Property<int>("StudentId");
-
-                    b.HasKey("NotesId");
-
-                    b.ToTable("Notes");
-                });
-
             modelBuilder.Entity("College.Models.Student", b =>
                 {
                     b.Property<int>("StudentId")
@@ -60,7 +45,7 @@ namespace College.Migrations
 
                     b.HasKey("StudentId");
 
-                    b.ToTable("Students");
+                    b.ToTable("Student");
                 });
 #pragma warning restore 612, 618
         }
